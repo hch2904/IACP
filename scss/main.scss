@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,600,700,800');
+* {
+  box-sizing: border-box;
+}
+
+$highlight-color: #007CC2;
+
+html, body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0!important;
+}
+label{
+  font-family: Raleway;
+  color: #000;
+  margin: 0 auto;
+}
+table > thead > tr > th {
+  margin: 0 auto;
+  text-align: center;  
+}
+.clearfix::before, .clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+.wrapper {
+  width: 1440px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+  font-family: 'Raleway';
+}
+.text-center{
+  text-align: center;
+  margin: 0 auto;
+}
+
+.bg-video{
+    position: fixed;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    min-width: 100vw;
+    min-height: 100vh;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    overflow: hidden;
+}
+.video-overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    //background: url(../img/intro/cover.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background: rgba(0,0,0,0.4);
+}
+#row-1{
+  text-align: center;
+  padding: 2.5% 0 0 0; 
+  img{
+    height: 30%;
+    width: 30%;
+    animation: slideDown 900ms 200ms forwards;
+    visibility: hidden;
+  } 
+  .sub-head{
+    color: white;
+    padding: 2% 0;
+    font-family: Raleway;
+    font-size: 1.5em;  
+    h4{
+      padding-bottom: 1%;
+      animation: slideDown 900ms 200ms forwards;
+      visibility: hidden;
+    }
+    h1{
+      font-weight: 800;
+      transition: ease-in-out;
+      //opacity: 0;
+      animation: scale-up 1200ms 500ms forwards;
+      animation-fill-mode: forwards;
+      visibility: hidden;
+    }
+    p{
+      padding: 0;
+      font-size: 0.8em!important;
+    }
+  }
+}
+#sub-head-content{
+  padding: 5% 0;
+}
+#contactContainer{
+  text-align: center;
+  .customButton{
+    padding: 15px 45px; 
+    color: white;
+    font-family: Raleway;
+    font-size: 1.2em;
+    background-color: transparent;
+    border: 2px solid $highlight-color;
+    
+  }
+}
+.highlightContent{
+  color: $highlight-color;
+  font-weight: 700!important;
+  font-size: 1.2em;
+}
+#arrowContainer{
+  text-align: center;
+  padding: 5px 0; 
+  span{
+    color: white;
+    font-size: 2em;
+    transition: ease-in-out;
+    animation: pulse 1s infinite;
+  }
+}
+
+/***************************** KeyFrames ***********************************************/
+
+@keyframes scale-up{
+  0%{
+    opacity: 0;
+    transform: scale(0,0);  
+  }
+  100%{
+    opacity: 1!important;
+    transform: scale(1,1);  
+    visibility: visible;
+  }
+
+}
+
+@keyframes pulse{
+  0%{
+    transform: translateY(-10px);
+  }
+  50%{
+    transform: translateY(0px); 
+  } 
+  100%{
+    transform: translateY(-10px);
+  }
+  
+}
+@keyframes slideDown{
+  0%{
+    opacity: 0;
+    transform: translateY(-50px);  
+  }
+  100%{
+    opacity: 1!important;
+    transform: translateY(0px);
+    visibility: visible;
+  }
+}
+@import 'login';
+@import 'admin';

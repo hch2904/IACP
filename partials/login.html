@@ -1,0 +1,51 @@
+<div class="container-fluid" id="login-container">
+	<div class="row">
+		<!-- Navbar -->
+		<nav class="navbar fixed-top navbar-light">
+		  <a class="navbar-brand" href="">
+		    <img src="/assets/logo.png" alt="" class="d-inline-block align-top nav-brand-img" alt="">
+		  </a>
+		</nav>
+		<!-- Navbar Ends -->
+		<div class="col-md-6 hidden-xs col-sm-6">
+			<div class="left-container">
+				<h2 id="sub-head-1"><span class="highlightContent">Quality</span> is Key</h2>
+				<h2 id="sub-head-2"><span class="highlightContent">Security</span> is our Concern</h2>
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-6">
+			<br><br>
+			<div class="right-container">
+				<br><br><br>
+				<h1 class="text-center">Please login</h1>
+				<br>
+				<div class="row">
+				<div class="form-container col-md-6 col-md-offset-3 ">
+					<form name="loginForm" novalidate ng-submit="loginSubmit(loginForm.$valid)">
+						<div class="form-group" ng-class="{ 'has-error' : loginForm.username.$invalid && !loginForm.username.$pristine }">
+						    <label for="username">Username</label>
+						    <input type="text" class="form-control" name="username" id="username" aria-describedby="emailHelp" placeholder="Enter Username" ng-model="login_form.username" required>
+						    <p ng-show="loginForm.username.$invalid && !loginForm.username.$pristine" class="help-block form-text error">Your Username is required.</p>
+						    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+						</div>
+					  	<div class="form-group" ng-class="{ 'has-error' : loginForm.password.$invalid && !loginForm.password.$pristine }">
+						    <label for="exampleInputPassword1">Password</label>
+						    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model="login_form.password" required name="password">
+						    <p ng-show="loginForm.password.$invalid && !loginForm.password.$pristine" class="help-block form-text error">Your Password is required.</p>
+					  	</div>
+					  	<div class="button-wrap">
+					  		<input type="submit" name="submit" value="Login" class="btn btn-primary btn-block" ng-disabled="loginForm.$invalid">
+					  	</div>
+					  	<br><br><br>
+					</form>
+				</div>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+	      <div class="container">
+	        <span class="text-muted text-center">Copyright&copy; Infosys Limited&reg;</span>
+	      </div>
+	    </footer>
+	</div>
+</div>

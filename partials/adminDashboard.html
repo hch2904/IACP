@@ -1,0 +1,64 @@
+<div class="container-fluid" id="login-container">
+	<div class="row">
+		<nav class="navbar fixed-top navbar-default">
+		 <div class="container-fluid">
+		 	<div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		       <a class="navbar-brand" href="">
+			    	<img src="/assets/logo.png" alt="" class="d-inline-block align-top nav-brand-img" alt="">
+			  </a> 
+		    </div>
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav"> 
+		      </ul>
+		      <ul class="nav navbar-nav navbar-right">
+		        <li><button class="btn btn-primary logout-btn">Logout</button></li>
+		      </ul>
+		    </div>
+		 </div>
+		</nav>
+		<div class="col-md-8 col-md-offset-2">
+			<div class="content-wrap">
+				<h2 class="admin-heading">Onboarding Online Ad Publisher</h2>
+				<br>
+				<form name="adminPubForm" novalidate ng-submit="addPublisher(adminPubForm.$valid)">
+						<div class="form-group row" ng-class="{ 'has-error' : adminPubForm.publisherName.$invalid && !adminPubForm.publisherName.$pristine }">
+					      <label for="pubName" class="col-sm-4 col-form-label col-form-label-sm">Publisher Name</label>
+					      <div class="col-sm-8">
+					        <input type="text"  class="form-control form-control-sm" id="pubName" placeholder="Please Enter Your Name" required name="publisherName" ng-model="adminPublisherForm.name">
+					        <p ng-show="adminPubForm.publisherName.$invalid && !adminPubForm.publisherName.$pristine" class="help-block form-text error">Your Username is required.</p>
+					      </div>
+					    </div>
+					    <div class="form-group row" ng-class="{ 'has-error' : adminPubForm.publisherEmail.$invalid && !adminPubForm.publisherEmail.$pristine }">
+					      <label for="pubEmail" class="col-sm-4 col-form-label col-form-label-sm">Publisher Email</label>
+					      <div class="col-sm-8">
+					        <input type="email" class="form-control form-control-sm" id="pubEmail" placeholder="you@example.com" required name="publisherEmail" ng-model="adminPublisherForm.email">
+					        <p ng-show="adminPubForm.publisherEmail.$invalid && !adminPubForm.publisherEmail.$pristine" class="help-block form-text error">Your Email is required.</p>
+					      </div>
+					    </div>
+					    <div class="form-group row" ng-class="{ 'has-error' : adminPubForm.publisherAddress.$invalid && !adminPubForm.publisherAddress.$pristine }">
+					      <label for="pubAddress" class="col-sm-4 col-form-label col-form-label-sm">Publisher Address</label>
+					      <div class="col-sm-8">
+					        <input type="text" class="form-control form-control-sm" id="pubAddress" name="publisherAddress" placeholder="Enter Your Address" required ng-model="adminPublisherForm.address">
+					        <p ng-show="adminPubForm.publisherAddress.$invalid && !adminPubForm.publisherAddress.$pristine" class="help-block form-text error">Your Address is required.</p>
+					      </div>
+					    </div>
+					  	<div class="button-wrap">
+					  		<input type="submit" name="submit" value="Generate E-Token" class="btn btn-primary" ng-disabled="adminPubForm.$invalid">
+					  		<button class="btn btn-primary" ng-disabled="adminPubForm.$invalid">Email Token</button>
+					  	</div>
+				</form>	
+			</div>
+		</div>
+		<footer class="footer">
+	      <div class="container">
+	        <span class="text-muted text-center">Copyright&copy; Infosys Limited&reg;</span>
+	      </div>
+	    </footer>
+	</div>
+</div>

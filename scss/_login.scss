@@ -1,0 +1,100 @@
+$highlightColor: #007CC2;
+html,body{
+	height: 100%;
+}
+#login-container{
+	background: url("../assets/bg-pattern.png") repeat;
+	height: 100%;
+	min-height: 100%;
+}
+.nav-brand-img{
+	/* width: 6%!important; */
+	height: 100%;
+	
+}
+.navbar-light{
+	background-color: #f8f8f8;
+    border-color: #e7e7e7;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.left-container{
+	margin: 10% 10%;
+	#sub-head-1,#sub-head-2{
+		color: black;
+		font-size: 3.5em!important;
+		font-weight: 700;
+		padding: 5% 0;
+	}
+	#sub-head-1{
+		text-align: left;
+		visibility: hidden;
+		animation: slideInLeft 1.2s forwards;
+	}
+	#sub-head-2{
+		text-align: right;
+		animation: slideInRight 1.2s forwards;
+	}
+}
+.right-container{
+	margin: 0 15%;
+	background: #fbfbfb;
+	border-radius: 5%;
+	animation: scale-up 1s forwards;
+}
+.form-group{
+	text-align: center;
+	label{
+		padding: 5px 0;
+	}
+}
+.button-wrap{
+	padding: 5px 0;
+	margin: 0 auto;
+	text-align: center;
+	input[type="button"]{
+		background-color: $highlightColor;
+		font-family: Raleway;
+		font-weight: 700;
+		border-color: 2px solid #e1e1e1; 
+	}
+
+}
+.footer{
+    position: fixed;
+    z-index: 2;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #f5f5f5;
+    text-align:center;
+    box-shadow: 0 -10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    span{
+    	color:black;
+    }
+}
+
+@keyframes slideInLeft{
+	0%{
+		transform: translateX(-150px);
+		opacity: 0;
+	}
+	100%{
+		transform: translateX(0px);
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+@keyframes slideInRight{
+	0%{
+		transform: translateX(150px);
+		opacity: 0;
+	}
+	100%{
+		transform: translateX(0px);
+		opacity: 1;
+		visibility: visible;
+	}
+
+}

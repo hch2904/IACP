@@ -6,7 +6,8 @@ function AuthenticationService($http, $cookies, $rootScope, $timeout,
 		) {
 
 	var service = {};
-	var APIURI = "http://10.68.100.77:8077/DemoWeb/rest/infosys/";
+	const clid = 'deepak:secret';
+	const URI_AUTH = "http://10.68.100.77:8000/infosys/oauth/token";
 	service.Login = Login;
 	service.SetCredentials = SetCredentials;
 	service.ClearCredentials = ClearCredentials;
@@ -14,17 +15,20 @@ function AuthenticationService($http, $cookies, $rootScope, $timeout,
 	return service;
 
 	function Login(username, password, callback) {
+		let payload = `grant_type=password&username=${username}&password=${password}`;
+		let head1 =
+			{
+				'Content-Type':'application/x-www-form-urlencoded',
+				'Authorization':'Basic '+Base64.encode(clid)
+			}
+
+		console.log(payload);
 		$http({
 			method : 'POST',
-			url : APIURI+"authoAPI",
-			data : {
-				username : username,
-				password : password
-			},
-			headers : {
-				'Accept' : 'application/json;odata=verbose'
-			}
+			url : URI_AUTH,
+			data : payload
 		}).then(function successCallback(response) {
+			console.log(response)
 			callback(response);
 		}).catch(function(res) {
 			console.log(res);
